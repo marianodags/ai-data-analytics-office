@@ -1,0 +1,32 @@
+{
+  "default_model": "qwen3.5:4b-q4_K_M",
+  "ollama_base_url": "http://127.0.0.1:11434",
+  "max_concurrent_llm_requests": 1,
+  "agents": [
+    {
+      "id": "researcher",
+      "name": "Researcher",
+      "description": "Dataset provenance and methodology research"
+    },
+    {
+      "id": "data_engineer",
+      "name": "Data Engineer",
+      "description": "Ingestion, ETL, schema validation"
+    },
+    {
+      "id": "statistical_analyst",
+      "name": "Statistical Analyst",
+      "description": "Code-backed statistics and interpretation"
+    },
+    {
+      "id": "quality_assurance",
+      "name": "Quality Assurance",
+      "description": "Reconciliation and independent checks"
+    },
+    {
+      "id": "reporting",
+      "name": "Reporting Specialist",
+      "description": "Approved tables, charts and narrative drafts"
+    }
+  ]
+}
