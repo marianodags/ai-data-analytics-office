@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Analytics Office Agent Event",
+  "description": "Proposed v1 contract for REAL n8n/Ollama execution events. Habblaud does not consume this format until an adapter is implemented.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "event_id",
+    "task_id",
+    "agent",
+    "status",
+    "timestamp"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "agent": {
+      "enum": [
+        "researcher",
+        "data_engineer",
+        "statistical_analyst",
+        "quality_assurance",
+        "reporting"
+      ]
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "working",
+        "waiting_for_approval",
+        "completed",
+        "failed"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "activity": {
+      "type": "string",
+      "maxLength": 240
+    },
+    "artifact_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 512
+      },
+      "maxItems": 30
+    },
+    "error": {
+      "type": "string",
+      "maxLength": 1000
+    }
+  }
+}
